@@ -10,13 +10,13 @@ type TopicScreenRouteProp = RouteProp<RootStackParamList, 'Topic'>;
 
 export default function TopicScreen() {
   const route = useRoute<TopicScreenRouteProp>();
-  const { title, content } = route.params;
+  const { fullTitle, content } = route.params;
 
-  const fullContent = topicDetails[title] ?? content;
+  const fullContent = topicDetails[fullTitle] ?? content;
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title}>{fullTitle}</Text>
       <Text style={styles.content}>{fullContent}</Text>
     </ScrollView>
   );

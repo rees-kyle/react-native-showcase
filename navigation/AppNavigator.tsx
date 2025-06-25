@@ -13,7 +13,11 @@ import { TopicSection } from '../data/docs';
 export type RootStackParamList = {
   Home: undefined;
   Section: { section: TopicSection };
-  Topic: { title: string; content: string };
+  Topic: {
+    title: string;      // short title for header bar
+    fullTitle: string;  // full title shown in TopicScreen
+    content: string;
+  };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

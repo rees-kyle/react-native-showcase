@@ -1,3 +1,5 @@
+// screens/SectionScreen.tsx
+
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
@@ -12,7 +14,6 @@ type SectionScreenNavigationProp = NativeStackNavigationProp<RootStackParamList,
 export default function SectionScreen() {
   const route = useRoute<SectionScreenRouteProp>();
   const navigation = useNavigation<SectionScreenNavigationProp>();
-
   const { section } = route.params;
 
   return (
@@ -22,11 +23,12 @@ export default function SectionScreen() {
         keyExtractor={(item, index) => `${section.id}-${index}`}
         renderItem={({ item }) => (
           <TopicItem
-            title={item}
+            title={item.title}
             onPress={() =>
               navigation.navigate('Topic', {
-                title: item,
-                content: item, // Replace with actual content later
+                title: item.title,            // short title for header bar
+                fullTitle: item.fullTitle,    // full title shown inside
+                content: item.fullTitle,      // fallback for topicDetails lookup
               })
             }
           />
