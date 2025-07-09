@@ -17,6 +17,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('Setup and Environment button pressed.');
         }}
       />
+      <TopicButton
+        text="2.  Core Components"
+        onPress={() => {
+          navigation.navigate('CoreComponents');
+          console.log('Core Components button pressed.');
+        }}
+      />
     </View>
   );
 }

@@ -3,9 +3,18 @@ import { NavigationContainer, NavigationState } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ReactNativeShowcaseScreen from './screens/ReactNativeShowcaseScreen';
 import SetupAndEnvironmentScreen from './screens/topics/SetupAndEnvironmentScreen';
-import InstallationScreen from './screens/subtopics/InstallationScreen';
-import DifferencesScreen from './screens/subtopics/DifferencesScreen';
-import RunningAppsScreen from './screens/subtopics/RunningAppsScreen';
+import {
+  InstallationScreen,
+  DifferencesScreen,
+  RunningAppsScreen
+} from './screens/subtopics/1';
+import CoreComponentsScreen from './screens/topics/CoreComponentsScreen';
+import {
+  ViewTextAndTextInputScreen,
+  ScrollViewFlatListAndSectionListScreen,
+  ButtonPressableTouchableOpacityScreen,
+  ImageScreen
+} from './screens/subtopics/2';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -13,6 +22,11 @@ export type RootStackParamList = {
   Installation: undefined;
   Differences: undefined;
   RunningApps: undefined;
+  CoreComponents: undefined;
+  ViewTextAndTextInput: undefined;
+  ScrollViewFlatListAndSectionList: undefined;
+  ButtonPressableTouchableOpacity: undefined;
+  Image: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -73,6 +87,31 @@ export default function App() {
           name="RunningApps"
           component={RunningAppsScreen}
           options={{ title: '1.3  Running Apps' }}
+        />
+        <Stack.Screen
+          name="CoreComponents"
+          component={CoreComponentsScreen}
+          options={{ title: '2.  Core Components' }}
+        />
+        <Stack.Screen
+          name="ViewTextAndTextInput"
+          component={ViewTextAndTextInputScreen}
+          options={{ title: '2.1  View, Text and TextInput' }}
+        />
+        <Stack.Screen
+          name="ScrollViewFlatListAndSectionList"
+          component={ScrollViewFlatListAndSectionListScreen}
+          options={{ title: '2.2  ScrollView, FlatList and SectionList' }}
+        />
+        <Stack.Screen
+          name="ButtonPressableTouchableOpacity"
+          component={ButtonPressableTouchableOpacityScreen}
+          options={{ title: '2.3  Button, Pressable and TouchableOpacity' }}
+        />
+        <Stack.Screen
+          name="Image"
+          component={ImageScreen}
+          options={{ title: '2.4  Image' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
