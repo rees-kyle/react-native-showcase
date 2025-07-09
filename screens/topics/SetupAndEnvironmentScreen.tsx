@@ -17,6 +17,20 @@ export default function SetupAndEnvironmentScreen() {
           console.log('Installation button pressed.');
         }}
       />
+      <TopicButton
+        text="1.2  Differences"
+        onPress={() => {
+          navigation.navigate('Differences');
+          console.log('Differences button pressed.');
+        }}
+      />
+      <TopicButton
+        text="1.3  Running Apps"
+        onPress={() => {
+          navigation.navigate('RunningApps');
+          console.log('Running Apps button pressed.');
+        }}
+      />
     </View>
   );
 }

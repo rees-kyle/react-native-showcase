@@ -4,11 +4,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ReactNativeShowcaseScreen from './screens/ReactNativeShowcaseScreen';
 import SetupAndEnvironmentScreen from './screens/topics/SetupAndEnvironmentScreen';
 import InstallationScreen from './screens/subtopics/InstallationScreen';
+import DifferencesScreen from './screens/subtopics/DifferencesScreen';
+import RunningAppsScreen from './screens/subtopics/RunningAppsScreen';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
   SetupAndEnvironment: undefined;
   Installation: undefined;
+  Differences: undefined;
+  RunningApps: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -59,6 +63,16 @@ export default function App() {
           name="Installation"
           component={InstallationScreen}
           options={{ title: '1.1  Installation' }}
+        />
+        <Stack.Screen
+          name="Differences"
+          component={DifferencesScreen}
+          options={{ title: '1.2  Differences' }}
+        />
+        <Stack.Screen
+          name="RunningApps"
+          component={RunningAppsScreen}
+          options={{ title: '1.3  Running Apps' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
