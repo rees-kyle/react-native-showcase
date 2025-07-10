@@ -15,6 +15,13 @@ import {
   ButtonPressableTouchableOpacityScreen,
   ImageScreen
 } from './screens/subtopics/2';
+import StylingScreen from './screens/topics/StylingScreen';
+import {
+  FlexboxScreen,
+  StylesheetCreateVsInlineStylesScreen,
+  NoCSSFilesScreen,
+  PlatformSpecificStylingScreen
+} from './screens/subtopics/3';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -27,6 +34,11 @@ export type RootStackParamList = {
   ScrollViewFlatListAndSectionList: undefined;
   ButtonPressableTouchableOpacity: undefined;
   Image: undefined;
+  StylingScreen: undefined;
+  FlexboxScreen: undefined;
+  StylesheetCreateVsInlineStylesScreen: undefined;
+  NoCSSFilesScreen: undefined;
+  PlatformSpecificStylingScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -112,6 +124,31 @@ export default function App() {
           name="Image"
           component={ImageScreen}
           options={{ title: '2.4  Image' }}
+        />
+        <Stack.Screen
+          name="Styling"
+          component={StylingScreen}
+          options={{ title: '3.  Styling' }}
+        />
+        <Stack.Screen
+          name="Flexbox"
+          component={FlexboxScreen}
+          options={{ title: '3.1  Flexbox' }}
+        />
+        <Stack.Screen
+          name="StylesheetCreateVsInlineStyles"
+          component={StylesheetCreateVsInlineStylesScreen}
+          options={{ title: '3.2  Stylesheet Create Vs Inline Styles' }}
+        />
+        <Stack.Screen
+          name="NoCSSFiles"
+          component={NoCSSFilesScreen}
+          options={{ title: '3.3  No CSS Files' }}
+        />
+        <Stack.Screen
+          name="PlatformSpecificStyling"
+          component={PlatformSpecificStylingScreen}
+          options={{ title: '3.4  Platform Specific Styling' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

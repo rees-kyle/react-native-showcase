@@ -24,6 +24,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('Core Components button pressed.');
         }}
       />
+      <TopicButton
+        text="3.  Styling"
+        onPress={() => {
+          navigation.navigate('Styling');
+          console.log('Styling button pressed.');
+        }}
+      />
     </View>
   );
 }
