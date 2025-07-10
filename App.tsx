@@ -22,6 +22,13 @@ import {
   NoCSSFilesScreen,
   PlatformSpecificStylingScreen
 } from './screens/subtopics/3';
+import ReactNavigationLibraryScreen from './screens/topics/ReactNavigationLibraryScreen';
+import {
+  StackNavigatorScreen,
+  DrawerNavigationScreen,
+  PassingParamsBetweenScreensScreen,
+  TabNavigatorScreen
+} from './screens/subtopics/4';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -39,6 +46,11 @@ export type RootStackParamList = {
   StylesheetCreateVsInlineStylesScreen: undefined;
   NoCSSFilesScreen: undefined;
   PlatformSpecificStylingScreen: undefined;
+  ReactNavigationLibraryScreen: undefined;
+  StackNavigatorScreen: undefined;
+  DrawerNavigationScreen: undefined;
+  PassingParamsBetweenScreensScreen: undefined;
+  TabNavigatorScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -149,6 +161,31 @@ export default function App() {
           name="PlatformSpecificStyling"
           component={PlatformSpecificStylingScreen}
           options={{ title: '3.4  Platform Specific Styling' }}
+        />
+        <Stack.Screen
+          name="ReactNavigationLibrary"
+          component={ReactNavigationLibraryScreen}
+          options={{ title: '4.  React Navigation Library' }}
+        />
+        <Stack.Screen
+          name="StackNavigator"
+          component={StackNavigatorScreen}
+          options={{ title: '4.1  Stack Navigator' }}
+        />
+        <Stack.Screen
+          name="DrawerNavigation"
+          component={DrawerNavigationScreen}
+          options={{ title: '4.2  Drawer Navigation' }}
+        />
+        <Stack.Screen
+          name="PassingParamsBetweenScreens"
+          component={PassingParamsBetweenScreensScreen}
+          options={{ title: '4.3  Passing Params Between Screens' }}
+        />
+        <Stack.Screen
+          name="TabNavigator"
+          component={TabNavigatorScreen}
+          options={{ title: '4.4  Tab Navigator' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

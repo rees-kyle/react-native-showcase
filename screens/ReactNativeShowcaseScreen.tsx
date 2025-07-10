@@ -31,6 +31,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('Styling button pressed.');
         }}
       />
+      <TopicButton
+        text="4.  React Navigation Library"
+        onPress={() => {
+          navigation.navigate('ReactNavigationLibrary');
+          console.log('React Navigation Library button pressed.');
+        }}
+      />
     </View>
   );
 }
