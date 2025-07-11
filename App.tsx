@@ -29,6 +29,12 @@ import {
   PassingParamsBetweenScreensScreen,
   TabNavigatorScreen
 } from './screens/subtopics/4';
+import PlatformAPIAndNativeFeaturesScreen from './screens/topics/PlatformAPIAndNativeFeaturesScreen';
+import {
+  PermissionsScreen,
+  LinkingToOtherAppsOrURLsScreen,
+  UsingPlatformModuleScreen
+} from './screens/subtopics/5';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -51,6 +57,10 @@ export type RootStackParamList = {
   DrawerNavigationScreen: undefined;
   PassingParamsBetweenScreensScreen: undefined;
   TabNavigatorScreen: undefined;
+  PlatformAPIAndNativeFeaturesScreen: undefined;
+  PermissionsScreen: undefined;
+  LinkingToOtherAppsOrURLsScreen: undefined;
+  UsingPlatformModuleScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -186,6 +196,26 @@ export default function App() {
           name="TabNavigator"
           component={TabNavigatorScreen}
           options={{ title: '4.4  Tab Navigator' }}
+        />
+        <Stack.Screen
+          name="PlatformAPIAndNativeFeatures"
+          component={PlatformAPIAndNativeFeaturesScreen}
+          options={{ title: '5.  Platform API and Native Features' }}
+        />
+        <Stack.Screen
+          name="Permissions"
+          component={PermissionsScreen}
+          options={{ title: '5.1  Permissions' }}
+        />
+        <Stack.Screen
+          name="LinkingToOtherAppsOrURLs"
+          component={LinkingToOtherAppsOrURLsScreen}
+          options={{ title: '5.2  Linking to Other Apps or URLs' }}
+        />
+        <Stack.Screen
+          name="UsingPlatformModule"
+          component={UsingPlatformModuleScreen}
+          options={{ title: '5.3  Using Platform Module' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

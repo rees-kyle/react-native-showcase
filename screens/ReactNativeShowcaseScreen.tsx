@@ -38,6 +38,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('React Navigation Library button pressed.');
         }}
       />
+      <TopicButton
+        text="5.  Platform API and Native Features"
+        onPress={() => {
+          navigation.navigate('PlatformAPIAndNativeFeatures');
+          console.log('Platform API and Native Features button pressed.');
+        }}
+      />
     </View>
   );
 }
