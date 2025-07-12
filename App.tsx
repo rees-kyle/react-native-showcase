@@ -9,53 +9,51 @@ import {
   ReactNavigationLibraryScreen,
   PlatformAPIAndNativeFeaturesScreen,
   NativeModulesAndThirdPartyLibrariesScreen,
-  StateAndContextScreen
+  StateAndContextScreen,
+  NetworkingScreen
 } from './screens/topics';
-
 import {
   InstallationScreen,
   DifferencesScreen,
   RunningAppsScreen
 } from './screens/subtopics/1';
-
 import {
   ViewTextAndTextInputScreen,
   ScrollViewFlatListAndSectionListScreen,
   ButtonPressableTouchableOpacityScreen,
   ImageScreen
 } from './screens/subtopics/2';
-
 import {
   FlexboxScreen,
   StylesheetCreateVsInlineStylesScreen,
   NoCSSFilesScreen,
   PlatformSpecificStylingScreen
 } from './screens/subtopics/3';
-
 import {
   StackNavigatorScreen,
   DrawerNavigationScreen,
   PassingParamsBetweenScreensScreen,
   TabNavigatorScreen
 } from './screens/subtopics/4';
-
 import {
   PermissionsScreen,
   LinkingToOtherAppsOrURLsScreen,
   UsingPlatformModuleScreen
 } from './screens/subtopics/5';
-
 import {
   CameraGPSAndDeviceStorageScreen,
   NativeDependenciesAndLinkingScreen,
   SensorsMediaAndNotificationsScreen
 } from './screens/subtopics/6';
-
 import {
   ReuseReactKnowledgeScreen,
   AsyncStorageScreen,
   SecureStorageOptionsScreen
 } from './screens/subtopics/7';
+import {
+  HTTPRequestsScreen,
+  HandlingOfflineModeScreen
+} from './screens/subtopics/8';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -90,6 +88,9 @@ export type RootStackParamList = {
   ReuseReactKnowledgeScreen: undefined;
   AsyncStorageScreen: undefined;
   SecureStorageOptionsScreen: undefined;
+  NetworkingScreen: undefined;
+  HTTPRequestsScreen: undefined;
+  HandlingOfflineModeScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -285,6 +286,21 @@ export default function App() {
           name="SecureStorageOptions"
           component={SecureStorageOptionsScreen}
           options={{ title: '7.3  Secure Storage Options' }}
+        />
+        <Stack.Screen
+          name="Networking"
+          component={NetworkingScreen}
+          options={{ title: '8.  Networking' }}
+        />
+        <Stack.Screen
+          name="HTTPRequests"
+          component={HTTPRequestsScreen}
+          options={{ title: '8.1  HTTP Requests' }}
+        />
+        <Stack.Screen
+          name="HandlingOfflineMode"
+          component={HandlingOfflineModeScreen}
+          options={{ title: '8.2  Handling Offline Mode' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

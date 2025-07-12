@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import TopicButton from '../components/TopicButton';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -9,7 +9,7 @@ export default function ReactNativeShowcaseScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <TopicButton
         text="1.  Setup and Environment"
         onPress={() => {
@@ -59,7 +59,14 @@ export default function ReactNativeShowcaseScreen() {
           console.log('State and Context button pressed.');
         }}
       />
-    </View>
+      <TopicButton
+        text="8.  Networking"
+        onPress={() => {
+          navigation.navigate('Networking');
+          console.log('Networking button pressed.');
+        }}
+      />
+    </ScrollView>
   );
 }
 
