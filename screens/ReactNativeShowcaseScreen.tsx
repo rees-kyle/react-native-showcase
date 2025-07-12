@@ -52,6 +52,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('Native Modules and Third Party Libraries button pressed.');
         }}
       />
+      <TopicButton
+        text="7.  State and Context"
+        onPress={() => {
+          navigation.navigate('StateAndContext');
+          console.log('State and Context button pressed.');
+        }}
+      />
     </View>
   );
 }

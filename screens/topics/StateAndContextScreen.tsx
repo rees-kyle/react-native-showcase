@@ -5,37 +5,30 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../../App';
 
-export function StylingScreen() {
+export function StateAndContextScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
     <View style={styles.container}>
       <TopicButton
-        text="3.1  Flexbox"
+        text="7.1  Reuse React Knowledge"
         onPress={() => {
-          navigation.navigate('Flexbox');
-          console.log('Flexbox button pressed.');
+          navigation.navigate('ReuseReactKnowledge');
+          console.log('Reuse React Knowledge button pressed.');
         }}
       />
       <TopicButton
-        text="3.2  Stylesheet Create Vs Inline Styles"
+        text="7.2  AsyncStorage"
         onPress={() => {
-          navigation.navigate('StylesheetCreateVsInlineStyles');
-          console.log('Stylesheet Create Vs Inline Styles button pressed.');
+          navigation.navigate('AsyncStorage');
+          console.log('AsyncStorage button pressed.');
         }}
       />
       <TopicButton
-        text="3.3  No CSS Files"
+        text="7.3  Secure Storage Options"
         onPress={() => {
-          navigation.navigate('NoCSSFiles');
-          console.log('No CSS Files button pressed.');
-        }}
-      />
-      <TopicButton
-        text="3.4  Platform Specific Styling"
-        onPress={() => {
-          navigation.navigate('PlatformSpecificStyling');
-          console.log('Platform Specific Styling button pressed.');
+          navigation.navigate('SecureStorageOptions');
+          console.log('Secure Storage Options button pressed.');
         }}
       />
     </View>

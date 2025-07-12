@@ -2,45 +2,60 @@ import React from 'react';
 import { NavigationContainer, NavigationState } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ReactNativeShowcaseScreen from './screens/ReactNativeShowcaseScreen';
-import SetupAndEnvironmentScreen from './screens/topics/SetupAndEnvironmentScreen';
+import {
+  SetupAndEnvironmentScreen,
+  CoreComponentsScreen,
+  StylingScreen,
+  ReactNavigationLibraryScreen,
+  PlatformAPIAndNativeFeaturesScreen,
+  NativeModulesAndThirdPartyLibrariesScreen,
+  StateAndContextScreen
+} from './screens/topics';
+
 import {
   InstallationScreen,
   DifferencesScreen,
   RunningAppsScreen
 } from './screens/subtopics/1';
-import CoreComponentsScreen from './screens/topics/CoreComponentsScreen';
+
 import {
   ViewTextAndTextInputScreen,
   ScrollViewFlatListAndSectionListScreen,
   ButtonPressableTouchableOpacityScreen,
   ImageScreen
 } from './screens/subtopics/2';
-import StylingScreen from './screens/topics/StylingScreen';
+
 import {
   FlexboxScreen,
   StylesheetCreateVsInlineStylesScreen,
   NoCSSFilesScreen,
   PlatformSpecificStylingScreen
 } from './screens/subtopics/3';
-import ReactNavigationLibraryScreen from './screens/topics/ReactNavigationLibraryScreen';
+
 import {
   StackNavigatorScreen,
   DrawerNavigationScreen,
   PassingParamsBetweenScreensScreen,
   TabNavigatorScreen
 } from './screens/subtopics/4';
-import PlatformAPIAndNativeFeaturesScreen from './screens/topics/PlatformAPIAndNativeFeaturesScreen';
+
 import {
   PermissionsScreen,
   LinkingToOtherAppsOrURLsScreen,
   UsingPlatformModuleScreen
 } from './screens/subtopics/5';
-import NativeModulesAndThirdPartyLibrariesScreen from './screens/topics/NativeModulesAndThirdPartyLibrariesScreen';
+
 import {
   CameraGPSAndDeviceStorageScreen,
   NativeDependenciesAndLinkingScreen,
   SensorsMediaAndNotificationsScreen
 } from './screens/subtopics/6';
+
+import {
+  ReuseReactKnowledgeScreen,
+  AsyncStorageScreen,
+  SecureStorageOptionsScreen
+} from './screens/subtopics/7';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -71,6 +86,10 @@ export type RootStackParamList = {
   CameraGPSAndDeviceStorageScreen: undefined;
   NativeDependenciesAndLinkingScreen: undefined;
   SensorsMediaAndNotificationsScreen: undefined;
+  StateAndContextScreen: undefined;
+  ReuseReactKnowledgeScreen: undefined;
+  AsyncStorageScreen: undefined;
+  SecureStorageOptionsScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -246,6 +265,26 @@ export default function App() {
           name="SensorsMediaAndNotifications"
           component={SensorsMediaAndNotificationsScreen}
           options={{ title: '6.3  Sensors, Media and Notifications' }}
+        />
+        <Stack.Screen
+          name="StateAndContext"
+          component={StateAndContextScreen}
+          options={{ title: '7.  State and Context' }}
+        />
+        <Stack.Screen
+          name="ReuseReactKnowledge"
+          component={ReuseReactKnowledgeScreen}
+          options={{ title: '7.1  Reuse React Knowledge' }}
+        />
+        <Stack.Screen
+          name="AsyncStorage"
+          component={AsyncStorageScreen}
+          options={{ title: '7.2  AsyncStorage' }}
+        />
+        <Stack.Screen
+          name="SecureStorageOptions"
+          component={SecureStorageOptionsScreen}
+          options={{ title: '7.3  Secure Storage Options' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
