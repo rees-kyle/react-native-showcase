@@ -45,6 +45,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('Platform API and Native Features button pressed.');
         }}
       />
+      <TopicButton
+        text="6.  Native Modules and Third Party Libraries"
+        onPress={() => {
+          navigation.navigate('NativeModulesAndThirdPartyLibraries');
+          console.log('Native Modules and Third Party Libraries button pressed.');
+        }}
+      />
     </View>
   );
 }

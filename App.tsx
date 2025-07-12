@@ -35,6 +35,12 @@ import {
   LinkingToOtherAppsOrURLsScreen,
   UsingPlatformModuleScreen
 } from './screens/subtopics/5';
+import NativeModulesAndThirdPartyLibrariesScreen from './screens/topics/NativeModulesAndThirdPartyLibrariesScreen';
+import {
+  CameraGPSAndDeviceStorageScreen,
+  NativeDependenciesAndLinkingScreen,
+  SensorsMediaAndNotificationsScreen
+} from './screens/subtopics/6';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -61,6 +67,10 @@ export type RootStackParamList = {
   PermissionsScreen: undefined;
   LinkingToOtherAppsOrURLsScreen: undefined;
   UsingPlatformModuleScreen: undefined;
+  NativeModulesAndThirdPartyLibrariesScreen: undefined;
+  CameraGPSAndDeviceStorageScreen: undefined;
+  NativeDependenciesAndLinkingScreen: undefined;
+  SensorsMediaAndNotificationsScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -216,6 +226,26 @@ export default function App() {
           name="UsingPlatformModule"
           component={UsingPlatformModuleScreen}
           options={{ title: '5.3  Using Platform Module' }}
+        />
+        <Stack.Screen
+          name="NativeModulesAndThirdPartyLibraries"
+          component={NativeModulesAndThirdPartyLibrariesScreen}
+          options={{ title: '6.  Native Modules and Third Party Libraries' }}
+        />
+        <Stack.Screen
+          name="CameraGPSAndDeviceStorage"
+          component={CameraGPSAndDeviceStorageScreen}
+          options={{ title: '6.1  Camera, GPS and Device Storage' }}
+        />
+        <Stack.Screen
+          name="NativeDependenciesAndLinking"
+          component={NativeDependenciesAndLinkingScreen}
+          options={{ title: '6.2  Native Dependencies and Linking' }}
+        />
+        <Stack.Screen
+          name="SensorsMediaAndNotifications"
+          component={SensorsMediaAndNotificationsScreen}
+          options={{ title: '6.3  Sensors, Media and Notifications' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
