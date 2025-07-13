@@ -7,3 +7,4 @@ export { NativeModulesAndThirdPartyLibrariesScreen } from './NativeModulesAndThi
 export { StateAndContextScreen } from './StateAndContextScreen';
 export { NetworkingScreen } from './NetworkingScreen';
 export { AnimationsScreen } from './AnimationsScreen';
+export { DebuggingAndTestingScreen } from './DebuggingAndTestingScreen';

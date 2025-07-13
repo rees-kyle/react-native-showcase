@@ -11,7 +11,8 @@ import {
   NativeModulesAndThirdPartyLibrariesScreen,
   StateAndContextScreen,
   NetworkingScreen,
-  AnimationsScreen
+  AnimationsScreen,
+  DebuggingAndTestingScreen
 } from './screens/topics';
 import {
   InstallationScreen,
@@ -60,6 +61,11 @@ import {
   AnimatedAPIScreen,
   ReanimatedScreen
 } from './screens/subtopics/9';
+import {
+  DebuggingScreen,
+  LoggingScreen,
+  TestingScreen
+} from './screens/subtopics/10';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -101,6 +107,10 @@ export type RootStackParamList = {
   LayoutAnimationScreen: undefined;
   AnimatedAPIScreen: undefined;
   ReanimatedScreen: undefined;
+  DebuggingAndTestingScreen: undefined;
+  DebuggingScreen: undefined;
+  LoggingScreen: undefined;
+  TestingScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -331,6 +341,26 @@ export default function App() {
           name="Reanimated"
           component={ReanimatedScreen}
           options={{ title: '9.3  Reanimated' }}
+        />
+        <Stack.Screen
+          name="DebuggingAndTesting"
+          component={DebuggingAndTestingScreen}
+          options={{ title: '10.  Debugging and Testing' }}
+        />
+        <Stack.Screen
+          name="Debugging"
+          component={DebuggingScreen}
+          options={{ title: '10.1  Debugging' }}
+        />
+        <Stack.Screen
+          name="Logging"
+          component={LoggingScreen}
+          options={{ title: '10.2  Logging' }}
+        />
+        <Stack.Screen
+          name="Testing"
+          component={TestingScreen}
+          options={{ title: '10.3  Testing' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

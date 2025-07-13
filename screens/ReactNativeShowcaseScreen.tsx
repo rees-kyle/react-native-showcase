@@ -73,6 +73,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('Animations button pressed.');
         }}
       />
+      <TopicButton
+        text="10.  Debugging and Testing"
+        onPress={() => {
+          navigation.navigate('DebuggingAndTesting');
+          console.log('Debugging and Testing button pressed.');
+        }}
+      />
     </ScrollView>
   );
 }
