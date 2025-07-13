@@ -10,7 +10,8 @@ import {
   PlatformAPIAndNativeFeaturesScreen,
   NativeModulesAndThirdPartyLibrariesScreen,
   StateAndContextScreen,
-  NetworkingScreen
+  NetworkingScreen,
+  AnimationsScreen
 } from './screens/topics';
 import {
   InstallationScreen,
@@ -54,6 +55,11 @@ import {
   HTTPRequestsScreen,
   HandlingOfflineModeScreen
 } from './screens/subtopics/8';
+import {
+  LayoutAnimationScreen,
+  AnimatedAPIScreen,
+  ReanimatedScreen
+} from './screens/subtopics/9';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -91,6 +97,10 @@ export type RootStackParamList = {
   NetworkingScreen: undefined;
   HTTPRequestsScreen: undefined;
   HandlingOfflineModeScreen: undefined;
+  AnimationsScreen: undefined;
+  LayoutAnimationScreen: undefined;
+  AnimatedAPIScreen: undefined;
+  ReanimatedScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -301,6 +311,26 @@ export default function App() {
           name="HandlingOfflineMode"
           component={HandlingOfflineModeScreen}
           options={{ title: '8.2  Handling Offline Mode' }}
+        />
+        <Stack.Screen
+          name="Animations"
+          component={AnimationsScreen}
+          options={{ title: '9.  Animations' }}
+        />
+        <Stack.Screen
+          name="LayoutAnimation"
+          component={LayoutAnimationScreen}
+          options={{ title: '9.1  LayoutAnimation' }}
+        />
+        <Stack.Screen
+          name="AnimatedAPI"
+          component={AnimatedAPIScreen}
+          options={{ title: '9.2  Animated API' }}
+        />
+        <Stack.Screen
+          name="Reanimated"
+          component={ReanimatedScreen}
+          options={{ title: '9.3  Reanimated' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

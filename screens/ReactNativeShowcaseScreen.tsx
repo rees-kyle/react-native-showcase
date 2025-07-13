@@ -66,6 +66,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('Networking button pressed.');
         }}
       />
+      <TopicButton
+        text="9.  Animations"
+        onPress={() => {
+          navigation.navigate('Animations');
+          console.log('Animations button pressed.');
+        }}
+      />
     </ScrollView>
   );
 }
@@ -74,7 +81,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#121212', // matches your dark theme
-    padding: 16,
+    padding: 0,
     gap: 12,
   },
 });

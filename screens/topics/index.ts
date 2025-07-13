@@ -6,3 +6,4 @@ export { PlatformAPIAndNativeFeaturesScreen } from './PlatformAPIAndNativeFeatur
 export { NativeModulesAndThirdPartyLibrariesScreen } from './NativeModulesAndThirdPartyLibrariesScreen';
 export { StateAndContextScreen } from './StateAndContextScreen';
 export { NetworkingScreen } from './NetworkingScreen';
+export { AnimationsScreen } from './AnimationsScreen';
