@@ -8,3 +8,4 @@ export { StateAndContextScreen } from './StateAndContextScreen';
 export { NetworkingScreen } from './NetworkingScreen';
 export { AnimationsScreen } from './AnimationsScreen';
 export { DebuggingAndTestingScreen } from './DebuggingAndTestingScreen';
+export { BuildingAndDeploymentScreen } from './BuildingAndDeploymentScreen';

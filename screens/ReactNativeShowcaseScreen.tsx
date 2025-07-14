@@ -80,6 +80,13 @@ export default function ReactNativeShowcaseScreen() {
           console.log('Debugging and Testing button pressed.');
         }}
       />
+      <TopicButton
+        text="11.  Building and Deployment"
+        onPress={() => {
+          navigation.navigate('BuildingAndDeployment');
+          console.log('Building and Deployment button pressed.');
+        }}
+      />
     </ScrollView>
   );
 }

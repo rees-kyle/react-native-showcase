@@ -12,7 +12,8 @@ import {
   StateAndContextScreen,
   NetworkingScreen,
   AnimationsScreen,
-  DebuggingAndTestingScreen
+  DebuggingAndTestingScreen,
+  BuildingAndDeploymentScreen
 } from './screens/topics';
 import {
   InstallationScreen,
@@ -66,6 +67,11 @@ import {
   LoggingScreen,
   TestingScreen
 } from './screens/subtopics/10';
+import {
+  BuildingAPKIPAScreen,
+  CodeSigningScreen,
+  PublishingScreen
+} from './screens/subtopics/11';
 
 export type RootStackParamList = {
   ReactNativeShowcase: undefined;
@@ -111,6 +117,10 @@ export type RootStackParamList = {
   DebuggingScreen: undefined;
   LoggingScreen: undefined;
   TestingScreen: undefined;
+  BuildingAndDeploymentScreen: undefined;
+  BuildingAPKIPAScreen: undefined;
+  CodeSigningScreen: undefined;
+  PublishingScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -361,6 +371,26 @@ export default function App() {
           name="Testing"
           component={TestingScreen}
           options={{ title: '10.3  Testing' }}
+        />
+        <Stack.Screen
+          name="BuildingAndDeployment"
+          component={BuildingAndDeploymentScreen}
+          options={{ title: '11.  Building and Deployment' }}
+        />
+        <Stack.Screen
+          name="BuildingAPKIPA"
+          component={BuildingAPKIPAScreen}
+          options={{ title: '11.1  Building APK/IPA' }}
+        />
+        <Stack.Screen
+          name="CodeSigning"
+          component={CodeSigningScreen}
+          options={{ title: '11.2  Code Signing' }}
+        />
+        <Stack.Screen
+          name="Publishing"
+          component={PublishingScreen}
+          options={{ title: '11.3  Publishing' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
