@@ -152,7 +152,7 @@ export default function App() {
           headerStyle: {
             backgroundColor: '#0A0A0A',
           },
-          headerTintColor: '#FFFAFA',
+          headerTintColor: '#DDDDDD',
           headerTitleAlign: 'center',
           animation: 'slide_from_right',
         }}
