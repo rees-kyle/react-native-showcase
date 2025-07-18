@@ -71,7 +71,7 @@ npx react-native run-android`}
           ['Setup', 'Easy', 'Complex'],
           ['Native code support', '❌ (Limited, unless ejected)', '✅'],
           ['Over-the-air updates', '✅ (with Expo)', '❌ (unless set up separately)'],
-          ['Best for', 'Prototyping, MVPs', 'Full-scale production apps'],
+          ['Best for', 'Prototyping, MVPs', 'Full-scale production apps']
         ]}
         boldColumnIndex={0}
       />
@@ -87,5 +87,5 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingBottom: 32
-  },
+  }
 });
