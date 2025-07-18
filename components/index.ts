@@ -5,3 +5,4 @@ export { default as BulletList } from './BulletList';
 export { default as CodeBlock } from './CodeBlock';
 export { default as Divider } from './Divider';
 export { default as Table } from './Table';
+export { default as P } from './P';
