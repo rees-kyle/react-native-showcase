@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 interface BulletListProps {
-  items: string[];
+  items: React.ReactNode[];
 }
 
 export default function BulletList({ items }: BulletListProps) {
@@ -21,23 +21,23 @@ export default function BulletList({ items }: BulletListProps) {
 const styles = StyleSheet.create({
   list: {
     marginTop: 8,
-    marginBottom: 16
+    marginBottom: 16,
   },
   item: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginBottom: 8
+    marginBottom: 8,
   },
   bullet: {
     color: '#DDDDDD',
     fontSize: 16,
     lineHeight: 22,
-    marginRight: 8
+    marginRight: 8,
   },
   text: {
     flex: 1,
     color: '#DDDDDD',
     fontSize: 16,
-    lineHeight: 22
+    lineHeight: 22,
   },
 });
