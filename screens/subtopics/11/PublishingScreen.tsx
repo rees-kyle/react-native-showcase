@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Linking, Text } from 'react-native';
 
 import {
   H1,
@@ -11,6 +11,13 @@ import {
 } from '../../../components';
 
 export default function PublishingScreen() {
+
+  const handleOpenLink = (url) => {
+    Linking.openURL(url).catch(err => {
+      console.error("Couldn't load page", err);
+    });
+  };
+
   return (
     <ScrollView
       style={styles.container}
@@ -46,7 +53,15 @@ versionName "1.0"`}
       </P>
       <BulletList
         items={[
-          'Go to play.google.com/console',
+          <>
+            Go to{' '}
+            <Text
+              style={styles.link}
+              onPress={() => handleOpenLink('https://play.google.com/console')}
+            >
+              play.google.com/console
+            </Text>
+          </>,
           'One-time fee: $25 USD',
         ]}
       />
@@ -96,7 +111,15 @@ versionName "1.0"`}
       </P>
       <BulletList
         items={[
-          "Go to appstoreconnect.apple.com",
+          <>
+            Go to{' '}
+            <Text
+              style={styles.link}
+              onPress={() => handleOpenLink('https://appstoreconnect.apple.com')}
+            >
+              appstoreconnect.apple.com
+            </Text>
+          </>,
           "Register your app’s bundle ID, name, and metadata",
         ]}
       />
@@ -136,5 +159,9 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingBottom: 32
+  },
+  link: {
+    color: '#4da6ff',
+    textDecorationLine: 'underline',
   },
 });
