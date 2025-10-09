@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, Linking, StyleSheet, Text } from 'react-native';
 
 import {
   H1,
@@ -12,6 +12,13 @@ import {
 } from '../../../components';
 
 export default function DebuggingScreen() {
+
+  const handleOpenLink = (url) => {
+    Linking.openURL(url).catch(err => {
+      console.error("Couldn't load page", err);
+    });
+  };
+
   return (
     <ScrollView
       style={styles.container}
@@ -43,7 +50,15 @@ export default function DebuggingScreen() {
         ]}
       />
       <H3>Setup:</H3>
-      <P>1. Install Flipper from https://flipper.io</P>
+      <P>
+        1. Install Flipper from{' '}
+        <Text
+          style={styles.link}
+          onPress={() => handleOpenLink('https://fbflipper.com')}
+        >
+          https://fbflipper.com
+        </Text>
+      </P>
       <P>
         2. For bare React Native,
         most setups work out of the box (RN 0.62+)
@@ -75,8 +90,13 @@ export default function DebuggingScreen() {
       />
       <H3>Setup:</H3>
       <P>
-        1. Download from
-        https://github.com/jhen0409/react-native-debugger
+        1. Download from{' '}
+        <Text
+          style={styles.link}
+          onPress={() => handleOpenLink('https://github.com/jhen0409/react-native-debugger')}
+        >
+          https://github.com/jhen0409/react-native-debugger
+        </Text>
       </P>
       <P>
         2. Open it and set port to 8081
@@ -109,5 +129,9 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingBottom: 32
+  },
+  link: {
+    color: '#4da6ff',
+    textDecorationLine: 'underline',
   },
 });
