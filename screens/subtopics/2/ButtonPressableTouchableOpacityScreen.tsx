@@ -91,6 +91,7 @@ export default function ButtonPressableTouchableOpacityScreen() {
   </Text>
 </Pressable>`}
       </CodeBlock>
+      <H3>Output:</H3>
       <View style={{ marginBottom: 16 }}>
         <Pressable
           onPress={() => console.log('Pressed!')}
