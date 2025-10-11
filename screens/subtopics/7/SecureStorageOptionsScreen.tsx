@@ -1,10 +1,13 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ScrollView, Button, StyleSheet } from 'react-native';
+import * as Keychain from 'react-native-keychain';
+import ExampleButton from '../../../components/ExampleButton';
 
 import {
   H1,
   H2,
   H3,
+  H4,
   P,
   Divider,
   BulletList,
@@ -12,6 +15,22 @@ import {
 } from '../../../components';
 
 export default function SecureStorageOptionsScreen() {
+  const [token, setToken] = useState('');
+
+  const handleSecureStorageDemo = async () => {
+    // Store credentials securely
+    await Keychain.setGenericPassword('username', 'secretToken');
+
+    // Retrieve them
+    const credentials = await Keychain.getGenericPassword();
+    if (credentials) {
+      setToken(credentials.password);
+    }
+
+    // Optionally clear afterwards
+    // await Keychain.resetGenericPassword();
+  };
+
   return (
     <ScrollView
       style={styles.container}
@@ -28,19 +47,18 @@ export default function SecureStorageOptionsScreen() {
       </P>
       <Divider/>
 
-      <H2>Expo</H2>
-      <H3>'expo-secure-store'</H3>
+      <H2>Expo ('expo-secure-store')</H2>
       <BulletList
         items={[
           "Uses 'Keychain' on iOS and 'Keystore' on Android.",
           "Easy to implement, provides built-in encryption, and are safe for securely storing sensitive data.",
         ]}
       />
-      <P>Install:</P>
+      <H3>Install</H3>
       <CodeBlock>
         {`npx expo install expo-secure-store`}
       </CodeBlock>
-      <P>Example:</P>
+      <H3>Example</H3>
       <CodeBlock>
         {`import * as SecureStore from 'expo-secure-store';
 
@@ -53,8 +71,7 @@ await SecureStore.deleteItemAsync('token');`}
       </CodeBlock>
       <Divider/>
 
-      <H2>Non-Expo</H2>
-      <H3>'react-native-keychain'</H3>
+      <H2>Non-Expo ('react-native-keychain')</H2>
       <BulletList
         items={[
           "Uses 'Keychain' on iOS and 'Keystore' on Android.",
@@ -62,27 +79,50 @@ await SecureStore.deleteItemAsync('token');`}
           "Supports biometric auth.",
         ]}
       />
-      <P>Install:</P>
+      <H3>Install</H3>
       <CodeBlock>
         {`npm install react-native-keychain`}
       </CodeBlock>
-      <P>Link (if needed):</P>
+      <H3>Link (if needed)</H3>
       <CodeBlock>
         {`npx pod-install`}
       </CodeBlock>
-      <P>Example:</P>
+      <H3>Example</H3>
+      <H4>Code:</H4>
       <CodeBlock>
-        {`import * as Keychain from 'react-native-keychain';
+        {`import React, { useEffect, useState } from 'react';
+import { ScrollView, Button, StyleSheet } from 'react-native';
+import * as Keychain from 'react-native-keychain';
+import ExampleButton from '../../../components/ExampleButton';
 
-await Keychain.setGenericPassword('username', 'secretToken');
+export default function SecureStorageOptionsScreen() {
+  const [token, setToken] = useState('');
 
-const credentials = await Keychain.getGenericPassword();
-if (credentials) {
-  console.log('Token:', credentials.password);
-}
+  const handleSecureStorageDemo = async () => {
+    // Store credentials securely
+    await Keychain.setGenericPassword('username', 'secretToken');
 
-await Keychain.resetGenericPassword();`}
+    // Retrieve them
+    const credentials = await Keychain.getGenericPassword();
+    if (credentials) {
+      setToken(credentials.password);
+    }
+
+    // Optionally clear afterwards
+    // await Keychain.resetGenericPassword();
+  };
+
+  return (
+    <ScrollView>
+      <P>Stored token: {token || 'No token yet'}</P>
+      <ExampleButton text="Store Access Token" onPress={handleSecureStorageDemo} />
+    </ScrollView>
+  );
+}`}
       </CodeBlock>
+      <H4>Output:</H4>
+      <P>Stored token: {token || 'No token yet'}</P>
+      <ExampleButton text="Store Access Token" onPress={handleSecureStorageDemo} />
       <Divider/>
 
       <P>
