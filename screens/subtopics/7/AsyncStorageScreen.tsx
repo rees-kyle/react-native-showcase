@@ -116,7 +116,9 @@ export default function AsyncStorageScreen() {
       <ExampleButton text="Save Username" onPress={saveData} />
       <ExampleButton text="Load Username" onPress={loadData} />
       <ExampleButton text="Remove Username" onPress={removeData} />
-    <ScrollView/>`}
+    <ScrollView/>
+  );
+}`}
       </CodeBlock>
       <H3>Output:</H3>
       <P>Stored Username: {username || 'None'}</P>
