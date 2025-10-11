@@ -1,9 +1,12 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { ScrollView, Text, Button, StyleSheet } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import ExampleButton from '../../../components/ExampleButton';
 
 import {
   H1,
   H2,
+  H3,
   P,
   BulletList,
   Divider,
@@ -11,6 +14,31 @@ import {
 } from '../../../components';
 
 export default function AsyncStorageScreen() {
+  const [username, setUsername] = useState<string | null>(null);
+
+  const saveData = async () => {
+    await AsyncStorage.setItem('username', 'kyle');
+    setUsername('kyle');
+  };
+
+  const loadData = async () => {
+    const storedName = await AsyncStorage.getItem('username');
+    if (storedName) {
+      setUsername(`${storedName} loaded`);
+    } else {
+      setUsername('no username stored');
+    }
+  };
+
+  const removeData = async () => {
+    await AsyncStorage.removeItem('username');
+    setUsername('none');
+  };
+
+  useEffect(() => {
+    loadData(); // Load on mount
+  }, []);
+
   return (
     <ScrollView
       style={styles.container}
@@ -49,19 +77,52 @@ export default function AsyncStorageScreen() {
       <Divider/>
 
       <H2>Basic Usage</H2>
+      <H3>Code:</H3>
       <CodeBlock>
-        {`import AsyncStorage from '@react-native-async-storage/async-storage';
+        {`import React, { useState, useEffect } from 'react';
+import { ScrollView, Text, Button, StyleSheet } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import ExampleButton from '../../../components/ExampleButton';
 
-// Saving data
-await AsyncStorage.setItem('username', 'kyle');
+export default function AsyncStorageScreen() {
+  const [username, setUsername] = useState<string | null>(null);
 
-// Retrieving data
-const username = await AsyncStorage.getItem('username');
-console.log(username);
+  const saveData = async () => {
+    await AsyncStorage.setItem('username', 'kyle');
+    setUsername('kyle');
+  };
 
-// Removing data
-await AsyncStorage.removeItem('username');`}
+  const loadData = async () => {
+    const storedName = await AsyncStorage.getItem('username');
+    if (storedName) {
+      setUsername(\`$\{storedName} loaded\`);
+    } else {
+      setUsername('no username stored');
+    }
+  };
+
+  const removeData = async () => {
+    await AsyncStorage.removeItem('username');
+    setUsername('none');
+  };
+
+  useEffect(() => {
+    loadData(); // Load on mount
+  }, []);
+
+  return (
+    <ScrollView>
+      <P>Stored Username: {username || 'None'}</P>
+      <ExampleButton text="Save Username" onPress={saveData} />
+      <ExampleButton text="Load Username" onPress={loadData} />
+      <ExampleButton text="Remove Username" onPress={removeData} />
+    <ScrollView/>`}
       </CodeBlock>
+      <H3>Output:</H3>
+      <P>Stored Username: {username || 'None'}</P>
+      <ExampleButton text="Save Username" onPress={saveData} />
+      <ExampleButton text="Load Username" onPress={loadData} />
+      <ExampleButton text="Remove Username" onPress={removeData} />
       <Divider/>
 
       <H2>Example</H2>
@@ -96,6 +157,7 @@ export default function Example() {
 }
 
 const styles = StyleSheet.create({
+  text: { fontSize: 18, marginBottom: 10 },
   container: {
     flex: 1,
     backgroundColor: '#121212',
