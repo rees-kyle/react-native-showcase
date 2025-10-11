@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
+import NetInfo from '@react-native-community/netinfo';
 
 import {
   H1,
   H2,
   H3,
+  H4,
   P,
   Divider,
   CodeBlock,
@@ -12,6 +14,16 @@ import {
 } from '../../../components';
 
 export default function HandlingOfflineModeScreen() {
+  const [isConnected, setIsConnected] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener(state => {
+      setIsConnected(state.isConnected);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <ScrollView
       style={styles.container}
@@ -29,25 +41,38 @@ export default function HandlingOfflineModeScreen() {
         {`npm install @react-native-community/netinfo
 npx pod-install`}
       </CodeBlock>
-      <H3>Example:</H3>
+      <H3>Example</H3>
+      <P>
+        'NetInfo.addEventListener()'' is used to automatically update the status
+        whenever the network changes.
+      </P>
+      <H4>Code:</H4>
       <CodeBlock>
-        {`import NetInfo from '@react-native-community/netinfo';
+        {`import React, { useEffect, useState } from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import NetInfo from '@react-native-community/netinfo';
 
-NetInfo.fetch().then(state => {
-  console.log('Connection type:', state.type);
-  console.log('Is connected?', state.isConnected);
-});`}
-      </CodeBlock>
-      <CodeBlock>
-        {`useEffect(() => {
-  const unsubscribe = NetInfo.addEventListener(state => {
-    console.log('Connection type:', state.type);
-    console.log('Is connected?', state.isConnected);
-  });
+export default function HandlingOfflineModeScreen() {
+  const [isConnected, setIsConnected] = useState(true);
 
-  return () => unsubscribe();
-}, []);`}
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener(state => {
+      setIsConnected(state.isConnected);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  return (
+    <ScrollView>
+      <P>Status: {isConnected ? 'Online' : 'Offline'}</P>
+    </ScrollView>
+  );
+}`}
       </CodeBlock>
+      <H4>Output:</H4>
+      <P>Status: {isConnected ? 'Online' : 'Offline'}</P>
+      <P>In this example the status will display your internet connectivity.</P>
       <Divider/>
 
       <H2>'expo-network' (Expo)</H2>
