@@ -1,9 +1,11 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { ScrollView, View, LayoutAnimation, Platform, UIManager, StyleSheet } from 'react-native';
+import ExampleButton from '../../../components/ExampleButton';
 
 import {
   H1,
   H2,
+  H3,
   P,
   BulletList,
   Divider,
@@ -11,6 +13,14 @@ import {
 } from '../../../components';
 
 export default function LayoutAnimationScreen() {
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    // Animate the next layout change
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    setExpanded(!expanded);
+  };
+
   return (
     <ScrollView
       style={styles.container}
@@ -60,46 +70,58 @@ export default function LayoutAnimationScreen() {
       <Divider/>
 
       <H2>Example</H2>
+            <P>
+              This example shows how 'LayoutAnimation' automatically animates layout changes.
+              When the button is pressed,
+              'configureNext()' tells React Native to animate the next layout change,
+              and then the box’s size state is toggled. React Native detects the size change
+              and smoothly animates the transition between small and large.
+            </P>
+      <H3>Code:</H3>
       <CodeBlock>
         {`import React, { useState } from 'react';
-import { View, Button, LayoutAnimation, Platform, UIManager, StyleSheet } from 'react-native';
+import { ScrollView, View, LayoutAnimation, Platform, UIManager, StyleSheet } from 'react-native';
+import ExampleButton from '../../../components/ExampleButton';
 
-// Enable 'LayoutAnimation' on Android
-if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
-  UIManager.setLayoutAnimationEnabledExperimental(true);
-}
-
-export default function LayoutAnimationExample() {
+export default function LayoutAnimationScreen() {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => {
-    // Animate the next layout change
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setExpanded(!expanded);
   };
 
   return (
-    <View style={styles.container}>
-      <Button title="Toggle Box Size" onPress={toggleExpand} />
-      <View style={[styles.box, expanded && styles.expandedBox]} />
-    </View>
+    <ScrollView>
+      <ExampleButton text="Toggle Animation" onPress={toggleExpand} />
+      <View style={styles.centerContainer}>
+        <View style={[styles.box, expanded && styles.expandedBox]} />
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20 },
-  box: { width: 100, height: 100, backgroundColor: 'blue' },
-  expandedBox: { width: 200, height: 200 },
+  centerContainer: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  box: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'blue'
+  },
+  expandedBox: {
+    width: 200,
+    height: 200
+  },
 });`}
       </CodeBlock>
-      <P>
-        When you press the button,
-        the blue box smoothly animates between small and large sizes.
-      </P>
-      <P>
-        The key is calling 'LayoutAnimation.configureNext()'
-        right before the state change that triggers a layout update.
-      </P>
+      <H3>Output:</H3>
+      <ExampleButton text="Toggle Animation" onPress={toggleExpand} />
+      <View style={styles.centerContainer}>
+        <View style={[styles.box, expanded && styles.expandedBox]} />
+      </View>
     </ScrollView>
   );
 }
@@ -113,4 +135,10 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingBottom: 32
   },
+  centerContainer: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  box: { width: 100, height: 100, backgroundColor: 'blue' },
+  expandedBox: { width: 200, height: 200 },
 });
