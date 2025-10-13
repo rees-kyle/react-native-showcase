@@ -71,7 +71,7 @@ export default function HandlingOfflineModeScreen() {
 }`}
       </CodeBlock>
       <H4>Output:</H4>
-      <P>Status: {isConnected ? 'Online' : 'Offline'}</P>
+      <H1 style={{ color: 'orchid' }}>Status: {isConnected ? 'Online' : 'Offline'}</H1>
       <P>In this example the status will display your internet connectivity.</P>
       <Divider/>
 

@@ -92,8 +92,7 @@ import { useCallback } from 'react';`}</CodeBlock>
   );`}</CodeBlock>
 
       <H2>Output</H2>
-      <P>{output || 'Requesting permission...'}</P>
-
+      <H1 style={{ color: 'orchid' }}>{output || 'Requesting permission...'}</H1>
       <Divider/>
 
       <H2>iOS</H2>
