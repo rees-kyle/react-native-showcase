@@ -130,11 +130,6 @@ export default function App() {
     const currentRoutes = state?.routes ?? [];
     const currentIndex = state?.index ?? 0;
 
-    // Log when navigating "back" (i.e. going to a previous screen in the stack)
-    if (currentIndex < previousIndex) {
-      console.log('Back button pressed.');
-    }
-
     previousIndex = currentIndex;
   };
 

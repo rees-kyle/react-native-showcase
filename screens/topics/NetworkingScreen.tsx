@@ -14,14 +14,12 @@ export function NetworkingScreen() {
         text="8.1  HTTP Requests"
         onPress={() => {
           navigation.navigate('HTTPRequests');
-          console.log('HTTP Requests button pressed.');
         }}
       />
       <TopicButton
         text="8.2  Handling Offline Mode"
         onPress={() => {
           navigation.navigate('HandlingOfflineMode');
-          console.log('Handling Offline Mode button pressed.');
         }}
       />
     </View>

@@ -36,14 +36,12 @@ export default function ButtonPressableTouchableOpacityScreen() {
 
 <Button
   title="Click Me"
-  onPress={() => console.log('Button pressed')}
 />`}
       </CodeBlock>
       <H3>Output:</H3>
       <View style={{ marginBottom: 16 }}>
         <Button
           title="Click Me"
-          onPress={() => console.log('Button pressed')}
         />
       </View>
       <H3>Pros:</H3>
@@ -72,7 +70,6 @@ export default function ButtonPressableTouchableOpacityScreen() {
         {`import { Pressable, Text } from 'react-native';
 
 <Pressable
-  onPress={() => console.log('Pressed!')}
   style={({ pressed }) => [
     {
       backgroundColor: pressed ? '#C25FC0' : 'orchid',
@@ -94,7 +91,6 @@ export default function ButtonPressableTouchableOpacityScreen() {
       <H3>Output:</H3>
       <View style={{ marginBottom: 16 }}>
         <Pressable
-          onPress={() => console.log('Pressed!')}
           style={({ pressed }) => [
             {
               backgroundColor: pressed ? '#C25FC0' : 'orchid',
@@ -137,7 +133,6 @@ export default function ButtonPressableTouchableOpacityScreen() {
         {`import { TouchableOpacity, Text } from 'react-native';
 
 <TouchableOpacity
-  onPress={() => console.log('Touched!')}
   style={{
     backgroundColor: 'orchid',
     padding: 10,
@@ -157,7 +152,6 @@ export default function ButtonPressableTouchableOpacityScreen() {
       <H3>Output:</H3>
       <View style={{ marginBottom: 12 }}>
         <TouchableOpacity
-          onPress={() => console.log('Touched!')}
           style={{
             backgroundColor: 'orchid',
             padding: 10,

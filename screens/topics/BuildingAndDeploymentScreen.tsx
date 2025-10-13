@@ -14,21 +14,18 @@ export function BuildingAndDeploymentScreen() {
         text="11.1  Building APK/IPA"
         onPress={() => {
           navigation.navigate('BuildingAPKIPA');
-          console.log('Building APK/IPA button pressed.');
         }}
       />
       <TopicButton
         text="11.2  Code Signing"
         onPress={() => {
           navigation.navigate('CodeSigning');
-          console.log('Code Signing button pressed.');
         }}
       />
       <TopicButton
         text="11.3  Publishing"
         onPress={() => {
           navigation.navigate('Publishing');
-          console.log('Publishing button pressed.');
         }}
       />
     </View>

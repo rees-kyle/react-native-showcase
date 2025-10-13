@@ -14,21 +14,18 @@ export function DebuggingAndTestingScreen() {
         text="10.1  Debugging"
         onPress={() => {
           navigation.navigate('Debugging');
-          console.log('Debugging button pressed.');
         }}
       />
       <TopicButton
         text="10.2  Logging"
         onPress={() => {
           navigation.navigate('Logging');
-          console.log('Logging button pressed.');
         }}
       />
       <TopicButton
         text="10.3  Testing"
         onPress={() => {
           navigation.navigate('Testing');
-          console.log('Testing button pressed.');
         }}
       />
     </View>

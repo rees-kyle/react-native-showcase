@@ -14,28 +14,24 @@ export function StylingScreen() {
         text="3.1  Flexbox"
         onPress={() => {
           navigation.navigate('Flexbox');
-          console.log('Flexbox button pressed.');
         }}
       />
       <TopicButton
         text="3.2  Stylesheet Create Vs Inline Styles"
         onPress={() => {
           navigation.navigate('StylesheetCreateVsInlineStyles');
-          console.log('Stylesheet Create Vs Inline Styles button pressed.');
         }}
       />
       <TopicButton
         text="3.3  No CSS Files"
         onPress={() => {
           navigation.navigate('NoCSSFiles');
-          console.log('No CSS Files button pressed.');
         }}
       />
       <TopicButton
         text="3.4  Platform Specific Styling"
         onPress={() => {
           navigation.navigate('PlatformSpecificStyling');
-          console.log('Platform Specific Styling button pressed.');
         }}
       />
     </View>

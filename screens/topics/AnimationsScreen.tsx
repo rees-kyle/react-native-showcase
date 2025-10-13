@@ -14,21 +14,18 @@ export function AnimationsScreen() {
         text="9.1  LayoutAnimation"
         onPress={() => {
           navigation.navigate('LayoutAnimation');
-          console.log('LayoutAnimation button pressed.');
         }}
       />
       <TopicButton
         text="9.2  Animated API"
         onPress={() => {
           navigation.navigate('AnimatedAPI');
-          console.log('Animated API button pressed.');
         }}
       />
       <TopicButton
         text="9.3  Reanimated"
         onPress={() => {
           navigation.navigate('Reanimated');
-          console.log('Reanimated button pressed.');
         }}
       />
     </View>

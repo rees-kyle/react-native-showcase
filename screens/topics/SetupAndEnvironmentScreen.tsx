@@ -14,21 +14,18 @@ export function SetupAndEnvironmentScreen() {
         text="1.1  Installation"
         onPress={() => {
           navigation.navigate('Installation');
-          console.log('Installation button pressed.');
         }}
       />
       <TopicButton
         text="1.2  Differences"
         onPress={() => {
           navigation.navigate('Differences');
-          console.log('Differences button pressed.');
         }}
       />
       <TopicButton
         text="1.3  Running Apps"
         onPress={() => {
           navigation.navigate('RunningApps');
-          console.log('Running Apps button pressed.');
         }}
       />
     </View>

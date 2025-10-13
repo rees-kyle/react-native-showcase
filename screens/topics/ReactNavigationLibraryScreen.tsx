@@ -14,28 +14,24 @@ export function ReactNavigationLibraryScreen() {
         text="4.1  Stack Navigator"
         onPress={() => {
           navigation.navigate('StackNavigator');
-          console.log('Stack Navigator button pressed.');
         }}
       />
       <TopicButton
         text="4.2  Drawer Navigation"
         onPress={() => {
           navigation.navigate('DrawerNavigation');
-          console.log('Drawer Navigation button pressed.');
         }}
       />
       <TopicButton
         text="4.3  Passing Params Between Screens"
         onPress={() => {
           navigation.navigate('PassingParamsBetweenScreens');
-          console.log('Passing Params Between Screens button pressed.');
         }}
       />
       <TopicButton
         text="4.4  Tab Navigator"
         onPress={() => {
           navigation.navigate('TabNavigator');
-          console.log('Tab Navigator button pressed.');
         }}
       />
     </View>
