@@ -1,10 +1,11 @@
-# OSX
-#
+# ========================
+# macOS
+# ========================
 .DS_Store
 
+# ========================
 # Xcode
-#
-build/
+# ========================
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -22,11 +23,11 @@ DerivedData
 *.xcuserstate
 **/.xcode.env.local
 
-# Android/IntelliJ
-#
-build/
-.idea
-.gradle
+# ========================
+# Android / IntelliJ / Gradle
+# ========================
+.idea/
+.gradle/
 local.properties
 *.iml
 *.hprof
@@ -34,42 +35,58 @@ local.properties
 *.keystore
 !debug.keystore
 .kotlin/
+build/
 
-# node.js
-#
+# Ignore Gradle properties containing secrets
+/android/gradle.properties
+
+# Ignore generated assets and resources
+/android/app/src/main/assets/
+/android/app/src/main/res/drawable-mdpi/
+/android/app/src/main/res/drawable-hdpi/
+/android/app/src/main/res/drawable-xhdpi/
+/android/app/src/main/res/drawable-xxhdpi/
+/android/app/src/main/res/drawable-xxxhdpi/
+/android/app/src/main/res/raw/
+
+# ========================
+# Node.js / Yarn
+# ========================
 node_modules/
 npm-debug.log
 yarn-error.log
-
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/
-
-**/fastlane/report.xml
-**/fastlane/Preview.html
-**/fastlane/screenshots
-**/fastlane/test_output
-
-# Bundle artifact
-*.jsbundle
-
-# Ruby / CocoaPods
-**/Pods/
-/vendor/bundle/
-
-# Temporary files created by Metro to check the health of the file watcher
-.metro-health-check*
-
-# testing
-/coverage
-
-# Yarn
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# ========================
+# Fastlane
+# ========================
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# ========================
+# Bundled artifacts
+# ========================
+*.jsbundle
+
+# ========================
+# Ruby / CocoaPods
+# ========================
+**/Pods/
+vendor/bundle/
+
+# ========================
+# Metro / React Native
+# ========================
+.metro-health-check*
+
+# ========================
+# Testing
+# ========================
+/coverage
