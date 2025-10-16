@@ -65,7 +65,7 @@ export default function HandlingOfflineModeScreen() {
 
   return (
     <ScrollView>
-      <P>Status: {isConnected ? 'Online' : 'Offline'}</P>
+      <H1 style={{ color: 'orchid' }}>Status: {isConnected ? 'Online' : 'Offline'}</H1>
     </ScrollView>
   );
 }`}

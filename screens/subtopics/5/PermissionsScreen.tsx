@@ -89,7 +89,15 @@ import { useCallback } from 'react';`}</CodeBlock>
     useCallback(() => {
       requestCameraPermission();
     }, [])
-  );`}</CodeBlock>
+  );
+
+  return (
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      <H1 style={{ color: 'orchid' }}>{output || 'Requesting permission...'}</H1>
+    </ScrollView>
+  );
+}
+  `}</CodeBlock>
 
       <H2>Output</H2>
       <H1 style={{ color: 'orchid' }}>{output || 'Requesting permission...'}</H1>
